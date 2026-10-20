@@ -45,6 +45,29 @@ export default {
       return Response.json(card);
     }
 
+    // Generate a one-card tarot reading
+    if (request.method === "POST" && url.pathname === "/readings") {
+      const randomIndex = Math.floor(Math.random() * cards.length);
+      const card = cards[randomIndex];
+
+      const orientation = Math.random() < 0.5 ? "upright" : "reversed";
+
+      return Response.json({
+        spread: "one-card",
+        cards: [
+          {
+            id: card.id,
+            name: card.name,
+            orientation,
+            keywords:
+              orientation === "upright"
+                ? card.upright_keywords
+                : card.reversed_keywords
+          }
+        ]
+      });
+    }
+
     return Response.json(
       { error: "Endpoint not found" },
       { status: 404 }
