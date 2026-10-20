@@ -1,0 +1,33 @@
+[
+  {
+    "id": 0,
+    "name": "The Fool",
+    "arcana": "major",
+    "number": 0,
+    "upright_keywords": [
+      "new beginnings",
+      "freedom",
+      "spontaneity"
+    ],
+    "reversed_keywords": [
+      "recklessness",
+      "hesitation",
+      "poor judgment"
+    ]
+  },
+  {
+    "id": 1,
+    "name": "The Magician",
+    "arcana": "major",
+    "number": 1,
+    "upright_keywords": [
+      "skill",
+      "resourcefulness",
+      "manifestation"
+    ],
+    "reversed_keywords": [
+      "manipulation",
+      "untapped potential"
+    ]
+  }
+]
