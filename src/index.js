@@ -4,9 +4,22 @@ export default {
   async fetch(request) {
     const url = new URL(request.url);
 
-    // Retrieve all cards
+    // Retrieve all cards, optionally filtered by arcana
     if (request.method === "GET" && url.pathname === "/cards") {
-      return Response.json(cards);
+      const arcana = url.searchParams.get("arcana");
+
+      if (arcana && !["major", "minor"].includes(arcana)) {
+        return Response.json(
+          { error: "Invalid arcana. Must be 'major' or 'minor'." },
+          { status: 400 }
+        );
+      }
+
+      const results = arcana
+        ? cards.filter((card) => card.arcana === arcana)
+        : cards;
+
+      return Response.json(results);
     }
 
     // Retrieve a single card by ID
