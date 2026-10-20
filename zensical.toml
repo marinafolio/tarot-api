@@ -1,0 +1,6 @@
+[project]
+site_name = "Tarot API"
+site_url = "https://marinafolio.github.io/tarot-api/"
+
+[project.theme]
+variant = "modern"
