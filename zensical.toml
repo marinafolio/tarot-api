@@ -2,5 +2,13 @@
 site_name = "Tarot API"
 site_url = "https://marinafolio.github.io/tarot-api/"
 
+nav = [
+  { "Introduction" = "index.md" },
+  { "Quickstart" = "quickstart.md" },
+  { "Cards API" = "cards.md" },
+  { "Readings API" = "readings.md" },
+  { "Errors" = "errors.md" },
+]
+
 [project.theme]
 variant = "modern"
